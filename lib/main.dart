@@ -31,9 +31,9 @@ class QuizApp extends StatelessWidget {
         Colors.grey[900], // Set the background color of the app
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red, // Set the button color
+            backgroundColor: Colors.red,
             textStyle:
-            const TextStyle(fontSize: 24), // Set the button text style
+            const TextStyle(fontSize: 24),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(32.0),
             ),
