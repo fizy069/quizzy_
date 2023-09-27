@@ -33,7 +33,7 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
   final QuoteService _quoteService = QuoteService();
-
+  bool isLoading = true;
   String quote = '';
 
   @override
@@ -46,6 +46,7 @@ class _ResultScreenState extends State<ResultScreen> {
     final randomQuote = await _quoteService.getRandomQuote();
     setState(() {
       quote = randomQuote;
+      isLoading = false;
     });
   }
 
@@ -103,7 +104,9 @@ class _ResultScreenState extends State<ResultScreen> {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(15, 15, 15, 15), // Adjust the padding as needed
-                child: Text(
+                child: isLoading
+                    ? CircularProgressIndicator() // Show CircularProgressIndicator while loading.
+                    : Text(
                   quote,
                   style: const TextStyle(fontSize: 20),
                 ),
