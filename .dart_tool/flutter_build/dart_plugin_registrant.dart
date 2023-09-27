@@ -6,7 +6,9 @@
 // @dart = 2.19
 
 import 'dart:io'; // flutter_ignore: dart_io_import.
+import 'package:google_sign_in_android/google_sign_in_android.dart';
 import 'package:url_launcher_android/url_launcher_android.dart';
+import 'package:google_sign_in_ios/google_sign_in_ios.dart';
 import 'package:url_launcher_ios/url_launcher_ios.dart';
 import 'package:url_launcher_linux/url_launcher_linux.dart';
 import 'package:url_launcher_macos/url_launcher_macos.dart';
@@ -19,6 +21,15 @@ class _PluginRegistrant {
   static void register() {
     if (Platform.isAndroid) {
       try {
+        GoogleSignInAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`google_sign_in_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
         UrlLauncherAndroid.registerWith();
       } catch (err) {
         print(
@@ -28,6 +39,15 @@ class _PluginRegistrant {
       }
 
     } else if (Platform.isIOS) {
+      try {
+        GoogleSignInIOS.registerWith();
+      } catch (err) {
+        print(
+          '`google_sign_in_ios` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
       try {
         UrlLauncherIOS.registerWith();
       } catch (err) {

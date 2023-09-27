@@ -1,27 +1,55 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'main.dart';
+import 'quotes.dart'; // Import the quotes.dart file
+import 'splashScreen.dart';
 
-class Result extends StatefulWidget {
-  final int score;
-  final int totalQuestions;
-  final VoidCallback resetHandler;
-
-  const Result(this.score, this.totalQuestions, this.resetHandler, {Key? key})
-      : super(key: key);
-
-  @override
-  State<Result> createState() => _ResultState();
+void main() {
+  runApp(MyApp());
 }
 
-class _ResultState extends State<Result> {
-  // final score = FirebaseFirestore.instance.collection('users').doc('score');
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Quiz App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+class ResultScreen extends StatefulWidget {
+  final int score; // Add _score here
+  final int totalQuestions; // Add _totalQuestions here
+
+  ResultScreen(this.score, this.totalQuestions);
+
+  @override
+  _ResultScreenState createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen> {
+  final QuoteService _quoteService = QuoteService();
+
+  String quote = '';
+
+  @override
+  void initState() {
+    super.initState();
+    fetchRandomQuote();
+  }
+
+  Future<void> fetchRandomQuote() async {
+    final randomQuote = await _quoteService.getRandomQuote();
+    setState(() {
+      quote = randomQuote;
+    });
+  }
 
   String getRemarks() {
-    // getScore();
-    storeScore();
     if (widget.score == widget.totalQuestions) {
       return 'Perfect Score! Congratulations!';
     } else if (widget.score >= widget.totalQuestions * 0.8) {
@@ -33,56 +61,14 @@ class _ResultState extends State<Result> {
     }
   }
 
-  Future<String?> getScore() async {
-    return null;
-
-    // DocumentSnapshot snapshot =
-    //     await FirebaseFirestore.instance.collection('users').doc('score').get();
-    // if (snapshot.exists) {
-    //   final data = snapshot.data();
-    //   // if (data.containsKey('score')) {
-    //     return data['score'].toString();
-    //   // }
-    //   // return snapshot.data['scores'];
-    // }
-    // // Return a default value or handle the case when the document or field doesn't exist.
-    // return "0";
-
-    // final userScoresRef = FirebaseFirestore.instance
-    //     .collection('users')
-    //     .doc('score');
-    //     // .collection('scores');
-    // final querySnapshot = await userScoresRef.get();
-    //
-    // return querySnapshot.${doc.scores};
-  }
-
-  storeScore() async {
-    final user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      // final userUid = user.uid;
-      // final scoreData = {
-      //   'score': widget.score,
-      // };
-
-      final userScoresRef =
-          FirebaseFirestore.instance.collection('users').doc('score');
-      // .collection('scores');
-
-      await userScoresRef.update({
-        'scores': widget.score,
-      });
-    } else {
-      debugPrint("user null");
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(height: 250
+            ,),
           const Text(
             'Quiz Completed!',
             style: TextStyle(fontSize: 24),
@@ -94,33 +80,42 @@ class _ResultState extends State<Result> {
           ),
           const SizedBox(height: 16.0),
           Text(
-            storeScore(),
-            style: const TextStyle(fontSize: 24),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 16.0),
-          Text(
             getRemarks(),
             style: const TextStyle(fontSize: 24),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 24.0),
+          const SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
-              widget.resetHandler();
-              Navigator.pushReplacementNamed(context, '/');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SplashScreen()), // Replace SplashScreen with your actual widget
+              );
             },
             child: const Text(
               'Restart Quiz',
               style: TextStyle(fontSize: 24),
             ),
           ),
+          const SizedBox(height: 24.0),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(15, 15, 15, 15), // Adjust the padding as needed
+                child: Text(
+                  quote,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 50,),
         ],
       ),
     );
   }
 }
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -150,7 +145,7 @@ class _HomePageState extends State<HomePage> {
     },
     {
       'questionText':
-          'Q3. During preprocessing, the code “#include<stdio.h>” gets replaced by the contents of the file stdio.h.',
+      'Q3. During preprocessing, the code “#include<stdio.h>” gets replaced by the contents of the file stdio.h.',
       'answers': [
         {'text': 'No, happens during linking of code', 'isCorrect': false},
         {'text': 'Yes', 'isCorrect': true},
@@ -180,6 +175,7 @@ class _HomePageState extends State<HomePage> {
 
   int _questionIndex = 0;
   int _score = 0;
+  int _totalQuestions = 5; // Change this to the total number of questions
 
   void _answerQuestion(bool isCorrect) {
     setState(() {
@@ -206,11 +202,11 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _questionIndex < _questions.length
           ? Quiz(
-              questionIndex: _questionIndex,
-              questions: _questions,
-              answerQuestion: _answerQuestion,
-            )
-          : Result(_score, _questions.length, _resetQuiz),
+        questionIndex: _questionIndex,
+        questions: _questions,
+        answerQuestion: _answerQuestion,
+      )
+          : ResultScreen(_score, _totalQuestions), // Pass _score and _totalQuestions
     );
   }
 }

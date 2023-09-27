@@ -7,6 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'home.dart';
+import 'package:http/http.dart' as http;
 
 
 void main() async {
@@ -22,7 +23,7 @@ class QuizApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'COMPUTER PROGRAMMING QUIZ',
+      title: 'Quizzy',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         primaryColor: Colors.redAccent, // Set the accent color
