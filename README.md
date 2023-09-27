@@ -1,4 +1,4 @@
-# cp_quiz
+# Quizzy_
 
 A new Flutter project.
 
