@@ -1,0 +1,12 @@
+io.invertase.desktop_webview_auth-core-1.6.0-0 C:\Users\HP\.gradle\caches\transforms-3\1141b72fb8be4e566e7814849b1aa3a2\transformed\core-1.6.0\res
+io.invertase.desktop_webview_auth-jetified-window-1.0.0-beta04-1 C:\Users\HP\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\res
+io.invertase.desktop_webview_auth-jetified-annotation-experimental-1.1.0-2 C:\Users\HP\.gradle\caches\transforms-3\a6362f1fb79a6245a27920bb99ff99c3\transformed\jetified-annotation-experimental-1.1.0\res
+io.invertase.desktop_webview_auth-jetified-window-java-1.0.0-beta04-3 C:\Users\HP\.gradle\caches\transforms-3\ed438543a8e9ffa856a2b095c92f0ea3\transformed\jetified-window-java-1.0.0-beta04\res
+io.invertase.desktop_webview_auth-main-4 C:\Users\HP\AppData\Local\Pub\Cache\hosted\pub.dev\desktop_webview_auth-0.0.13\android\src\main\res
+io.invertase.desktop_webview_auth-release-5 C:\Users\HP\AppData\Local\Pub\Cache\hosted\pub.dev\desktop_webview_auth-0.0.13\android\src\release\res
+io.invertase.desktop_webview_auth-pngs-6 C:\Users\HP\quizzy\build\desktop_webview_auth\generated\res\pngs\release
+io.invertase.desktop_webview_auth-resValues-7 C:\Users\HP\quizzy\build\desktop_webview_auth\generated\res\resValues\release
+io.invertase.desktop_webview_auth-rs-8 C:\Users\HP\quizzy\build\desktop_webview_auth\generated\res\rs\release
+io.invertase.desktop_webview_auth-mergeReleaseResources-9 C:\Users\HP\quizzy\build\desktop_webview_auth\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.invertase.desktop_webview_auth-mergeReleaseResources-10 C:\Users\HP\quizzy\build\desktop_webview_auth\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.invertase.desktop_webview_auth-merged_res-11 C:\Users\HP\quizzy\build\desktop_webview_auth\intermediates\merged_res\release

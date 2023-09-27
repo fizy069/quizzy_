@@ -1,0 +1,13 @@
+com.aboutyou.dart_packages.sign_in_with_apple-browser-1.2.0-0 C:\Users\HP\.gradle\caches\transforms-3\0c9452e9d6dfce450eef0e3851e003b0\transformed\browser-1.2.0\res
+com.aboutyou.dart_packages.sign_in_with_apple-core-1.6.0-1 C:\Users\HP\.gradle\caches\transforms-3\1141b72fb8be4e566e7814849b1aa3a2\transformed\core-1.6.0\res
+com.aboutyou.dart_packages.sign_in_with_apple-jetified-window-1.0.0-beta04-2 C:\Users\HP\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\res
+com.aboutyou.dart_packages.sign_in_with_apple-jetified-annotation-experimental-1.1.0-3 C:\Users\HP\.gradle\caches\transforms-3\a6362f1fb79a6245a27920bb99ff99c3\transformed\jetified-annotation-experimental-1.1.0\res
+com.aboutyou.dart_packages.sign_in_with_apple-jetified-window-java-1.0.0-beta04-4 C:\Users\HP\.gradle\caches\transforms-3\ed438543a8e9ffa856a2b095c92f0ea3\transformed\jetified-window-java-1.0.0-beta04\res
+com.aboutyou.dart_packages.sign_in_with_apple-main-5 C:\Users\HP\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-3.3.0\android\src\main\res
+com.aboutyou.dart_packages.sign_in_with_apple-release-6 C:\Users\HP\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-3.3.0\android\src\release\res
+com.aboutyou.dart_packages.sign_in_with_apple-pngs-7 C:\Users\HP\quizzy\build\sign_in_with_apple\generated\res\pngs\release
+com.aboutyou.dart_packages.sign_in_with_apple-resValues-8 C:\Users\HP\quizzy\build\sign_in_with_apple\generated\res\resValues\release
+com.aboutyou.dart_packages.sign_in_with_apple-rs-9 C:\Users\HP\quizzy\build\sign_in_with_apple\generated\res\rs\release
+com.aboutyou.dart_packages.sign_in_with_apple-mergeReleaseResources-10 C:\Users\HP\quizzy\build\sign_in_with_apple\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.aboutyou.dart_packages.sign_in_with_apple-mergeReleaseResources-11 C:\Users\HP\quizzy\build\sign_in_with_apple\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.aboutyou.dart_packages.sign_in_with_apple-merged_res-12 C:\Users\HP\quizzy\build\sign_in_with_apple\intermediates\merged_res\release
