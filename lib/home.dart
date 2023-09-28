@@ -93,10 +93,12 @@ class _ResultScreenState extends State<ResultScreen> {
                 MaterialPageRoute(builder: (context) => const SplashScreen()), // Replace SplashScreen with your actual widget
               );
             },
+
             child: const Text(
               'Restart Quiz',
               style: TextStyle(fontSize: 24),
             ),
+
           ),
           const SizedBox(height: 24.0),
           Expanded(
@@ -108,7 +110,12 @@ class _ResultScreenState extends State<ResultScreen> {
                     ? CircularProgressIndicator() // Show CircularProgressIndicator while loading.
                     : Text(
                   quote,
-                  style: const TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic
+                  ),
+
+
                 ),
               ),
             ),

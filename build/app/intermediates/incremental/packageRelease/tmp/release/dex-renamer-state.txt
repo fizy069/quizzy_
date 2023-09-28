@@ -1,4 +1,4 @@
-#Mon Jun 05 00:25:20 IST 2023
-base.0=D\:\\flutter_apps\\cp_quiz\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
-renamed.0=classes.dex
+#Thu Sep 28 06:09:03 IST 2023
+base.0=C\:\\Users\\HP\\quizzy\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
+renamed.0=classes.dex
